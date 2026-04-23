@@ -1,242 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shareef Joseph</title>
-  <meta name="description" content="Personal portfolio of games, physical projects, art, writing, and music by Shareef Joseph." />
-
-  <style>
-    :root {
-      --bg: #fafafa;
-      --fg: #111;
-      --muted: #666;
-      --border: #ddd;
-      --accent: #000;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
-    }
-
-    main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 3rem 1.25rem 6rem;
-    }
-
-    header {
-      margin-bottom: 4rem;
-    }
-
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 3rem);
-      margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-      color: var(--muted);
-      max-width: 40rem;
-    }
-
-    section {
-      margin-bottom: 4rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.25rem;
-    }
-
-    .list {
-      display: grid;
-      gap: 1.25rem;
-    }
-
-    .card {
-      padding: 1rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: #fff;
-    }
-
-    .card h3 {
-      margin: 0 0 0.25rem;
-      font-size: 1.1rem;
-    }
-
-    .card p {
-      margin: 0.25rem 0 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .card a {
-      color: var(--fg);
-      text-decoration: none;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .card a:hover {
-      border-bottom-color: var(--accent);
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 0.5rem;
-      margin-top: 0.75rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 4px;
-    }
-
-    footer {
-      margin-top: 6rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0e0e0e;
-        --fg: #f1f1f1;
-        --muted: #888;
-        --border: #222;
-        --accent: #fff;
-      }
-
-      .card {
-        background: #121212;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shareef Joseph | Portfolio</title>
+    <style>
+        :root { --bg: #121212; --card: #1e1e1e; --text: #e0e0e0; --accent: #3498db; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        header { text-align: center; padding: 80px 20px; }
+        h1 { font-size: 2.5rem; letter-spacing: 2px; text-transform: uppercase; margin: 0; }
+        .subtitle { color: #888; margin-top: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 90%; max-width: 1100px; padding-bottom: 60px; }
+        .card { background: var(--card); height: 180px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; border-radius: 12px; font-size: 1.2rem; font-weight: bold; border: 1px solid #333; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+        /* Category Accents */
+        .gamedev { border-left: 5px solid #00f2fe; }
+        .digital-art { border-left: 5px solid #a770ef; }
+        .writing { border-left: 5px solid #f1c40f; }
+        .smithing { border-left: 5px solid #ff4b2b; }
+        .bows { border-left: 5px solid #45a247; }
+        .pottery { border-left: 5px solid #e67e22; }
+        .fine-art { border-left: 5px solid #ecf0f1; }
+        footer { margin-top: auto; padding: 40px; color: #444; font-size: 0.8rem; }
+    </style>
 </head>
 <body>
-  <main>
     <header>
-      <h1>Shareef Joseph</h1>
-      <p class="subtitle">
-        Things I make for fun. Games, objects, art, writing, and music.
-        This site exists mostly so I can easily show things to people I care about.
-      </p>
+        <h1>Shareef Joseph</h1>
+        <p class="subtitle">Developer &middot; Maker &middot; Writer</p>
     </header>
-
-    <section id="games">
-      <h2>🎮 Games</h2>
-      <div class="list">
-        <div class="card">
-          <h3>
-            https://itch.io/Game Title</a>
-          </h3>
-          <p>
-            Short description of the game. What it is, what you explored, or why you made it.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="physical">
-      <h2>🔨 Physical Projects</h2>
-      <div class="list">
-
-        <div class="card">
-          <h3>Blacksmithing</h3>
-          <p>
-            Tools, experiments, and objects forged by hand.
-          </p>
-          <div class="gallery">
-            images/blacksmithing-1.jpg
-            images/blacksmithing-2.jpg
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Pottery</h3>
-          <p>
-            Wheel‑thrown and hand‑built ceramics.
-          </p>
-          <div class="gallery">
-            images/pottery-1.jpg
-            images/pottery-2.jpg
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Bow Making</h3>
-          <p>
-            Self bows, composites, and experiments with materials.
-          </p>
-          <div class="gallery">
-            images/bow-1.jpg
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="art">
-      <h2>🎨 Art</h2>
-      <div class="list">
-        <div class="card">
-          <h3>Selected Pieces</h3>
-          <p>
-            Sketches, illustrations, or finished works.
-          </p>
-          <div class="gallery">
-            images/art-1.jpg
-            images/art-2.jpg
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="writing">
-      <h2>📖 Writing</h2>
-      <div class="list">
-        <div class="card">
-          <h3>Novella Title</h3>
-          <p>
-            Short description or excerpt. You can link to a PDF, blog post, or external page.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="music">
-      <h2>🎵 Music</h2>
-      <div class="list">
-        <div class="card">
-          <h3>Track or Project Name</h3>
-          <p>
-            A short note about the sound or intent. Link to Bandcamp, SoundCloud, or files.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Shareef Joseph
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    <main class="grid">
+        <a href="gamedev.html" class="card gamedev">Game Dev</a>
+        <a href="digital-art.html" class="card digital-art">Digital Art</a>
+        <a href="writing.html" class="card writing">Writing</a>
+        <a href="blacksmithing.html" class="card smithing">Blacksmithing</a>
+        <a href="bowmaking.html" class="card bows">Bow Making</a>
+        <a href="pottery.html" class="card pottery">Pottery</a>
+        <a href="traditional-art.html" class="card fine-art">Traditional Art</a>
+    </main>
+    <footer>&copy; 2026 shareefjoseph.com</footer>
 </body>
 </html>
