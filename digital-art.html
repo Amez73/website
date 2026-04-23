@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | Shareef Joseph</title>
-    <style>
-        body { font-family: sans-serif; background: #121212; color: #fff; margin: 0; padding: 20px; }
-        .nav { margin-bottom: 30px; }
-        .nav a { color: #888; text-decoration: none; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; max-width: 1200px; margin: 0 auto; }
-        .item { aspect-ratio: 1; background: #222; border-radius: 8px; overflow: hidden; border: 1px solid #333; }
-        .item img { width: 100%; height: 100%; object-fit: cover; }
-    </style>
+    <title>Digital Art | Shareef Joseph</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="nav"><a href="index.html">&larr; Back</a></nav>
-    <h1 style="text-align:center">Gallery Title</h1>
-    <div class="grid">
-        <div class="item"><img src="placeholder.jpg" alt="Art"></div>
-        <div class="item"><img src="placeholder.jpg" alt="Art"></div>
-        <div class="item"><img src="placeholder.jpg" alt="Art"></div>
+    <div class="container">
+        <nav><a href="index.html" class="tactile nav-back">&larr; Back Home</a></nav>
+        <h1>Digital Art</h1>
+        <p style="color: var(--accent-wood); margin-bottom: 50px;">Character design and environmental paintings.</p>
+        <div class="gallery-grid">
+            <div class="tactile gallery-item"><img src="https://via.placeholder.com/400"></div>
+            <div class="tactile gallery-item"><img src="https://via.placeholder.com/400"></div>
+            <div class="tactile gallery-item"><img src="https://via.placeholder.com/400"></div>
+        </div>
     </div>
 </body>
 </html>
