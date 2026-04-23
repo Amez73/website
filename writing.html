@@ -4,23 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Writing | Shareef Joseph</title>
-    <style>
-        body { font-family: 'Georgia', serif; line-height: 1.8; color: #222; max-width: 650px; margin: 0 auto; padding: 40px 20px; }
-        .nav { font-family: sans-serif; margin-bottom: 50px; }
-        .nav a { color: #666; text-decoration: none; }
-        .story { margin-bottom: 50px; }
-        .tag { font-family: sans-serif; font-size: 0.7rem; background: #eee; padding: 3px 7px; text-transform: uppercase; }
-        .title { display: block; font-size: 1.8rem; text-decoration: none; color: #000; font-weight: bold; margin: 10px 0; }
-        .excerpt { color: #555; font-style: italic; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="nav"><a href="index.html">&larr; Home</a></nav>
-    <h1>The Library</h1>
-    <div class="story">
-        <span class="tag">Novella</span>
-        <a href="#" class="title">Story Title Placeholder</a>
-        <p class="excerpt">A brief preview of the narrative to entice the reader...</p>
+    <div class="container" style="max-width: 800px;">
+        <nav><a href="index.html" class="tactile nav-back">&larr; Back Home</a></nav>
+        <h1>The Library</h1>
+        <p style="color: var(--accent-wood); margin-bottom: 60px;">Stories and novellas.</p>
+        <div class="tactile" style="padding: 40px;">
+            <span style="font-size: 0.8rem; background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 5px;">NOVELLA</span>
+            <h2>Story Title Placeholder</h2>
+            <p style="font-style: italic; color: #aaa;">"Preview excerpt goes here..."</p>
+            <a href="#" style="color: var(--accent-amber); font-weight: bold; text-decoration: none;">READ STORY &rarr;</a>
+        </div>
     </div>
 </body>
 </html>
