@@ -23,7 +23,6 @@ h1, h2 { font-family: 'DM Serif Display', serif; color: var(--accent-amber); fon
 
 .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
 
-/* TACTILE BUTTONS/CARDS */
 .tactile {
     background: var(--card-bg);
     border: 1px solid rgba(255,255,255,0.08);
@@ -46,7 +45,6 @@ h1, h2 { font-family: 'DM Serif Display', serif; color: var(--accent-amber); fon
     transform: scale(0.97);
 }
 
-/* NAVIGATION */
 .nav-back {
     display: inline-block;
     padding: 12px 25px;
@@ -54,9 +52,10 @@ h1, h2 { font-family: 'DM Serif Display', serif; color: var(--accent-amber); fon
     font-weight: 600;
 }
 
-/* GRID LAYOUTS */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 .card-title { font-size: 1.5rem; margin: 0; text-align: center; padding: 40px; }
 
-/* MEDIA HANDLING */
 .media-box { width: 100%; border-radius: 20px 20px 0 0; display: block; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+.gallery-item { aspect-ratio: 1; overflow: hidden; border-radius: 15px; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
