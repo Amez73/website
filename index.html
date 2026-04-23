@@ -4,40 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shareef Joseph | Portfolio</title>
-    <style>
-        :root { --bg: #121212; --card: #1e1e1e; --text: #e0e0e0; --accent: #3498db; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
-        header { text-align: center; padding: 80px 20px; }
-        h1 { font-size: 2.5rem; letter-spacing: 2px; text-transform: uppercase; margin: 0; }
-        .subtitle { color: #888; margin-top: 10px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 90%; max-width: 1100px; padding-bottom: 60px; }
-        .card { background: var(--card); height: 180px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; border-radius: 12px; font-size: 1.2rem; font-weight: bold; border: 1px solid #333; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
-        /* Category Accents */
-        .gamedev { border-left: 5px solid #00f2fe; }
-        .digital-art { border-left: 5px solid #a770ef; }
-        .writing { border-left: 5px solid #f1c40f; }
-        .smithing { border-left: 5px solid #ff4b2b; }
-        .bows { border-left: 5px solid #45a247; }
-        .pottery { border-left: 5px solid #e67e22; }
-        .fine-art { border-left: 5px solid #ecf0f1; }
-        footer { margin-top: auto; padding: 40px; color: #444; font-size: 0.8rem; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Shareef Joseph</h1>
-        <p class="subtitle">Developer &middot; Maker &middot; Writer</p>
-    </header>
-    <main class="grid">
-        <a href="gamedev.html" class="card gamedev">Game Dev</a>
-        <a href="digital-art.html" class="card digital-art">Digital Art</a>
-        <a href="writing.html" class="card writing">Writing</a>
-        <a href="blacksmithing.html" class="card smithing">Blacksmithing</a>
-        <a href="bowmaking.html" class="card bows">Bow Making</a>
-        <a href="pottery.html" class="card pottery">Pottery</a>
-        <a href="traditional-art.html" class="card fine-art">Traditional Art</a>
-    </main>
-    <footer>&copy; 2026 shareefjoseph.com</footer>
+    <div class="container">
+        <header style="text-align: center; margin-bottom: 80px;">
+            <h1 style="font-size: 3.5rem; margin: 0;">Shareef Joseph</h1>
+            <p style="color: var(--accent-wood); font-size: 1.2rem; letter-spacing: 2px;">DEVELOPER &bull; MAKER &bull; WRITER</p>
+        </header>
+
+        <main class="grid">
+            <a href="gamedev.html" class="tactile card-title">Game Dev</a>
+            <a href="digital-art.html" class="tactile card-title">Digital Art</a>
+            <a href="writing.html" class="tactile card-title">Writing</a>
+            <a href="blacksmithing.html" class="tactile card-title">Blacksmithing</a>
+            <a href="bowmaking.html" class="tactile card-title">Bow Making</a>
+            <a href="pottery.html" class="tactile card-title">Pottery</a>
+            <a href="traditional-art.html" class="tactile card-title">Traditional Art</a>
+        </main>
+    </div>
 </body>
 </html>
