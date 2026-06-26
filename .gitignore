@@ -1,0 +1,12 @@
+# Godot 4
+.godot/
+/android/
+*.translation
+# export_presets.cfg is tracked on purpose so CI can build the web export
+
+# Exports / local web build output (CI rebuilds the deployed version)
+/build/
+/export/
+/Shareef Joseph — Portfolio.*
+*.wasm
+*.pck

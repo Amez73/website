@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/Background.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/components/CategoryCard.tscn" id="2"]
+
+[node name="LandingPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" parent="." instance=ExtResource("1")]
+layout_mode = 1
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Row" type="HBoxContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Column" type="VBoxContainer" parent="Scroll/Row"]
+custom_minimum_size = Vector2(960, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+
+[node name="TopSpacer" type="Control" parent="Scroll/Row/Column"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Scroll/Row/Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.831, 0.639, 0.451, 1)
+theme_override_font_sizes/font_size = 56
+text = "Shareef Joseph"
+horizontal_alignment = 1
+
+[node name="Tagline" type="Label" parent="Scroll/Row/Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737, 0.424, 0.145, 1)
+text = "stuff i make"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Scroll/Row/Column"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Grid" type="GridContainer" parent="Scroll/Row/Column"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
+columns = 3
+
+[node name="GameDev" parent="Scroll/Row/Column/Grid" instance=ExtResource("2")]
+layout_mode = 2
+text = "Game Dev"
+target_scene = "res://scenes/pages/GameDev.tscn"
+
+[node name="DigitalArt" parent="Scroll/Row/Column/Grid" instance=ExtResource("2")]
+layout_mode = 2
+text = "Digital Art"
+target_scene = "res://scenes/pages/DigitalArt.tscn"
+
+[node name="Writing" parent="Scroll/Row/Column/Grid" instance=ExtResource("2")]
+layout_mode = 2
+text = "Writing"
+external_url = "writing.html"
+
+[node name="Blacksmithing" parent="Scroll/Row/Column/Grid" instance=ExtResource("2")]
+layout_mode = 2
+text = "Blacksmithing"
+target_scene = "res://scenes/pages/Blacksmithing.tscn"
+
+[node name="BowMaking" parent="Scroll/Row/Column/Grid" instance=ExtResource("2")]
+layout_mode = 2
+text = "Bow Making"
+target_scene = "res://scenes/pages/BowMaking.tscn"
+
+[node name="Pottery" parent="Scroll/Row/Column/Grid" instance=ExtResource("2")]
+layout_mode = 2
+text = "Pottery"
+target_scene = "res://scenes/pages/Pottery.tscn"
