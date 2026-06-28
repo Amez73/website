@@ -15,7 +15,6 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  # IMPORTANT: set this to your exact editor version (Godot → Help → About).
   GODOT_VERSION: "4.6"
 
 jobs:
@@ -41,13 +40,22 @@ jobs:
         run: |
           set -e
           mkdir -p build/web
-          # Import resources first (may print warnings; that's fine)
-          godot --headless --import || true
-          godot --headless --export-release "Web" build/web/index.html
-          # Bring in the HTML-only pages (writing.html, style.css) + CNAME
+
+          # Let Godot import all resources (fonts, images, etc.)
+          timeout 120 godot --headless --import 2>&1 || true
+
+          # Override export path in the preset so it writes to our build dir
+          sed -i 's|export_path=.*|export_path="build/web/index.html"|' export_presets.cfg
+
+          # Export
+          godot --headless --export-release "Web" build/web/index.html 2>&1
+
+          # Copy HTML-only pages (writing.html, style.css) + CNAME alongside
           cp -r web-extra/. build/web/ 2>/dev/null || true
           touch build/web/.nojekyll
-          ls -la build/web
+
+          echo "=== build output ==="
+          ls -la build/web/
 
       - uses: actions/upload-pages-artifact@v3
         with:
