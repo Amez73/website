@@ -44,8 +44,11 @@ jobs:
           # Let Godot import all resources (fonts, images, etc.)
           timeout 120 godot --headless --import 2>&1 || true
 
-          # Override export path in the preset so it writes to our build dir
+          # Fix paths in the preset for CI:
+          # - export to our build dir
+          # - custom shell needs an absolute filesystem path (res:// doesn't work headless)
           sed -i 's|export_path=.*|export_path="build/web/index.html"|' export_presets.cfg
+          sed -i "s|html/custom_html_shell=.*|html/custom_html_shell=\"$(pwd)/export/custom_shell.html\"|" export_presets.cfg
 
           # Export
           godot --headless --export-release "Web" build/web/index.html 2>&1
