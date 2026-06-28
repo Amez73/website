@@ -53,24 +53,10 @@ body {
 }
 
 #status-splash {
-	max-height: 100%;
-	max-width: 100%;
-	margin: auto;
+	display: none !important;
 }
 
-#status-splash.show-image--false {
-	display: none;
-}
-
-#status-splash.fullsize--true {
-	height: 100%;
-	width: 100%;
-	object-fit: contain;
-}
-
-#status-splash.use-filter--false {
-	image-rendering: pixelated;
-}
+/* Godot splash image hidden — custom branded loader used instead */
 
 /* Branded loader text */
 #loader-brand {
