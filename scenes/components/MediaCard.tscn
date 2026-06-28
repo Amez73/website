@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/media_card.gd" id="1"]
+
+[node name="MediaCard" type="PanelContainer"]
+custom_minimum_size = Vector2(220, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 0
+script = ExtResource("1")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Image" type="TextureRect" parent="VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 200)
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Text" type="MarginContainer" parent="VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 22
+
+[node name="TextBox" type="VBoxContainer" parent="VBox/Text"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="VBox/Text/TextBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.831, 0.639, 0.451, 1)
+theme_override_font_sizes/font_size = 22
+text = "Title"
+
+[node name="Desc" type="Label" parent="VBox/Text/TextBox"]
+layout_mode = 2
+autowrap_mode = 3
+text = "Description"
+
+[node name="Link" type="Button" parent="VBox/Text/TextBox"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Open"

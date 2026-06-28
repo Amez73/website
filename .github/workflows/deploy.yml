@@ -1,0 +1,75 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: "4.6"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Godot ${{ env.GODOT_VERSION }} + export templates
+        run: |
+          set -e
+          BASE="https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable"
+          wget -qO godot.zip "$BASE/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+          wget -qO templates.tpz "$BASE/Godot_v${GODOT_VERSION}-stable_export_templates.tpz"
+          unzip -q godot.zip
+          sudo mv "Godot_v${GODOT_VERSION}-stable_linux.x86_64" /usr/local/bin/godot
+          sudo chmod +x /usr/local/bin/godot
+          mkdir -p "$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable"
+          unzip -q templates.tpz
+          mv templates/* "$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable/"
+
+      - name: Export web build
+        run: |
+          set -e
+          mkdir -p build/web
+
+          # Let Godot import all resources (fonts, images, etc.)
+          timeout 120 godot --headless --import 2>&1 || true
+
+          # Fix paths in the preset for CI:
+          # - export to our build dir
+          # - custom shell needs an absolute filesystem path (res:// doesn't work headless)
+          sed -i 's|export_path=.*|export_path="build/web/index.html"|' export_presets.cfg
+          sed -i "s|html/custom_html_shell=.*|html/custom_html_shell=\"$(pwd)/export/custom_shell.html\"|" export_presets.cfg
+
+          # Export
+          godot --headless --export-release "Web" build/web/index.html 2>&1
+
+          # Copy HTML-only pages (writing.html, style.css) + CNAME alongside
+          cp -r web-extra/. build/web/ 2>/dev/null || true
+          touch build/web/.nojekyll
+
+          echo "=== build output ==="
+          ls -la build/web/
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

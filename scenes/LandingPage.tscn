@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bh86wfbd3lhce"]
+
+[ext_resource type="PackedScene" path="res://scenes/Background.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/components/CategoryCard.tscn" id="2"]
+
+[node name="LandingPage" type="Control" unique_id=1227664959]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" parent="." unique_id=1908336762 instance=ExtResource("1")]
+layout_mode = 1
+
+[node name="Scroll" type="ScrollContainer" parent="." unique_id=1665306865]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Row" type="HBoxContainer" parent="Scroll" unique_id=1064443592]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Column" type="VBoxContainer" parent="Scroll/Row" unique_id=376516925]
+custom_minimum_size = Vector2(960, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+
+[node name="TopSpacer" type="Control" parent="Scroll/Row/Column" unique_id=1279793000]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Scroll/Row/Column" unique_id=1166203331]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.831, 0.639, 0.451, 1)
+theme_override_font_sizes/font_size = 56
+text = "Shareef Joseph"
+horizontal_alignment = 1
+
+[node name="Tagline" type="Label" parent="Scroll/Row/Column" unique_id=1438211757]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737, 0.424, 0.145, 1)
+text = "stuff i make"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Scroll/Row/Column" unique_id=1677290911]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Grid" type="GridContainer" parent="Scroll/Row/Column" unique_id=1694297872]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
+columns = 3
+
+[node name="GameDev" parent="Scroll/Row/Column/Grid" unique_id=605407640 instance=ExtResource("2")]
+layout_mode = 2
+text = "Game Dev"
+
+[node name="DigitalArt" parent="Scroll/Row/Column/Grid" unique_id=1113606435 instance=ExtResource("2")]
+layout_mode = 2
+text = "Digital Art"
+
+[node name="Writing" parent="Scroll/Row/Column/Grid" unique_id=1938899056 instance=ExtResource("2")]
+layout_mode = 2
+text = "Writing"
+
+[node name="Blacksmithing" parent="Scroll/Row/Column/Grid" unique_id=1692653174 instance=ExtResource("2")]
+layout_mode = 2
+text = "Blacksmithing"
+
+[node name="BowMaking" parent="Scroll/Row/Column/Grid" unique_id=165059990 instance=ExtResource("2")]
+layout_mode = 2
+text = "Bow Making"
+
+[node name="Pottery" parent="Scroll/Row/Column/Grid" unique_id=1905913265 instance=ExtResource("2")]
+layout_mode = 2
+text = "Pottery"

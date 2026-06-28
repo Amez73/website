@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/Background.tscn" id="1"]
+[ext_resource type="Script" path="res://scripts/nav_button.gd" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/components/MediaCard.tscn" id="3"]
+[ext_resource type="Texture2D" path="res://assets/images/placeholder.svg" id="4"]
+
+[node name="DigitalArt" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" parent="." instance=ExtResource("1")]
+layout_mode = 1
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Row" type="HBoxContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Column" type="VBoxContainer" parent="Scroll/Row"]
+custom_minimum_size = Vector2(960, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 24
+
+[node name="TopSpacer" type="Control" parent="Scroll/Row/Column"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Scroll/Row/Column"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "← Back Home"
+script = ExtResource("2")
+target_scene = "res://scenes/LandingPage.tscn"
+
+[node name="Title" type="Label" parent="Scroll/Row/Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.831, 0.639, 0.451, 1)
+theme_override_font_sizes/font_size = 44
+text = "Digital Art"
+
+[node name="Subtitle" type="Label" parent="Scroll/Row/Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737, 0.424, 0.145, 1)
+autowrap_mode = 3
+text = "Character design and environmental paintings."
+
+[node name="Grid" type="GridContainer" parent="Scroll/Row/Column"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="Art1" parent="Scroll/Row/Column/Grid" instance=ExtResource("3")]
+layout_mode = 2
+image_texture = ExtResource("4")
+
+[node name="Art2" parent="Scroll/Row/Column/Grid" instance=ExtResource("3")]
+layout_mode = 2
+image_texture = ExtResource("4")
+
+[node name="Art3" parent="Scroll/Row/Column/Grid" instance=ExtResource("3")]
+layout_mode = 2
+image_texture = ExtResource("4")
+
+[node name="BottomSpacer" type="Control" parent="Scroll/Row/Column"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2

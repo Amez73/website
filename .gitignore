@@ -1,0 +1,16 @@
+# Godot 4
+.godot/
+/android/
+*.translation
+# export_presets.cfg is tracked on purpose so CI can build the web export
+
+# Exports / local web build output (CI rebuilds the deployed version)
+/build/
+# /export/ is NOT ignored — it holds custom_shell.html (needed by CI)
+/Shareef Joseph — Portfolio.*
+*.wasm
+*.pck
+
+# Editor keeps regenerating this broken scene (references deleted main.gd)
+scenes/Main.tscn
+assets/Faculty_Glyphic.zip
