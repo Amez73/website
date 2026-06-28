@@ -85,3 +85,8 @@ text = "Bow Making"
 [node name="Pottery" parent="Scroll/Row/Column/Grid" unique_id=1905913265 instance=ExtResource("2")]
 layout_mode = 2
 text = "Pottery"
+
+[node name="EducationalGuides" parent="Scroll/Row/Column/Grid" instance=ExtResource("2")]
+layout_mode = 2
+text = "Educational Guides"
+external_url = "https://amez73.github.io/InteractiveGuides/"
