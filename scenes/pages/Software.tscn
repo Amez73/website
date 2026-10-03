@@ -64,30 +64,22 @@ layout_mode = 2
 image_texture = ExtResource("4")
 title_text = "VideoPlayerSJ"
 description = "A video player for a folder of downloaded shows and movies. Point it at a folder and episodes are grouped into shows automatically, with thumbnails, watch progress and \"continue watching\". VLC's playback engine is bundled, so mkv, HEVC, AC3/DTS and embedded subtitles all just work."
-link_text = "Download for Windows (.msi)"
-external_url = "https://github.com/Amez73/VideoPlayerSJ/releases/download/latest/VideoPlayerSJ-Windows-Installer.msi"
 
-[node name="VideoPlayerSJOther" type="HBoxContainer" parent="Scroll/Row/Column"]
+[node name="Downloads" type="HBoxContainer" parent="Scroll/Row/Column"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Portable" type="Button" parent="Scroll/Row/Column/VideoPlayerSJOther"]
+[node name="Desktop" type="Button" parent="Scroll/Row/Column/Downloads"]
 layout_mode = 2
-text = "Windows portable (.zip)"
+text = "Download for Windows"
 script = ExtResource("2")
-external_url = "https://github.com/Amez73/VideoPlayerSJ/releases/download/latest/VideoPlayerSJ-windows-portable.zip"
+download_url = "https://github.com/Amez73/VideoPlayerSJ/releases/download/latest/VideoPlayerSJ-Windows-Installer.msi"
 
-[node name="Android" type="Button" parent="Scroll/Row/Column/VideoPlayerSJOther"]
+[node name="Android" type="Button" parent="Scroll/Row/Column/Downloads"]
 layout_mode = 2
-text = "Android (.apk)"
+text = "Download for Android"
 script = ExtResource("2")
-external_url = "https://github.com/Amez73/VideoPlayerSJ/releases/download/latest/app-debug.apk"
-
-[node name="Source" type="Button" parent="Scroll/Row/Column/VideoPlayerSJOther"]
-layout_mode = 2
-text = "Source on GitHub"
-script = ExtResource("2")
-external_url = "https://github.com/Amez73/VideoPlayerSJ"
+download_url = "https://github.com/Amez73/VideoPlayerSJ/releases/download/latest/app-debug.apk"
 
 [node name="BottomSpacer" type="Control" parent="Scroll/Row/Column"]
 custom_minimum_size = Vector2(0, 60)
