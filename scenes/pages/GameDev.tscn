@@ -63,7 +63,7 @@ text = "Technical architecture & gameplay mechanics."
 layout_mode = 2
 image_texture = ExtResource("4")
 title_text = "Cozy Courier Co."
-description = "A chill game about delivering packages for woodland creatures. A relaxing platformer built around physics-based movement and cozy exploration."
+description = "Deliver packages for woodland creatures in a cozy platformer."
 link_text = "Play on itch.io"
 external_url = "https://amez73.itch.io/cozy-courier-co"
 
@@ -71,7 +71,7 @@ external_url = "https://amez73.itch.io/cozy-courier-co"
 layout_mode = 2
 image_texture = ExtResource("4")
 title_text = "Underground Golem Fight Club (UgFC)"
-description = "A strategy-fighting hybrid. Brew potions to dope up your Golem fighter, place wagers, and earn riches as it crushes rock in the arena."
+description = "Brew potions, dope your golem, and bet on the fight."
 link_text = "Play on itch.io"
 external_url = "https://kevinjarocki.itch.io/ugfc"
 
@@ -79,7 +79,7 @@ external_url = "https://kevinjarocki.itch.io/ugfc"
 layout_mode = 2
 image_texture = ExtResource("4")
 title_text = "Blade Rush"
-description = "Created for Godot Gamejam #68. A fast-paced action experience where you run a forge and manage the rush of blade-smithing under pressure."
+description = "Run a frantic forge. Made for Godot Gamejam #68."
 link_text = "Play on itch.io"
 external_url = "https://danieldomaracki.itch.io/bladerush"
 
@@ -87,7 +87,7 @@ external_url = "https://danieldomaracki.itch.io/bladerush"
 layout_mode = 2
 image_texture = ExtResource("4")
 title_text = "Fencing Game"
-description = "A head-to-head fencing action game built in Godot. Pick up your blade and fight! Playable in the browser or on Windows."
+description = "Head-to-head fencing. Pick up your blade and fight!"
 link_text = "Play on itch.io"
 external_url = "https://amez73.itch.io/fencing-game"
 
@@ -95,7 +95,7 @@ external_url = "https://amez73.itch.io/fencing-game"
 layout_mode = 2
 image_texture = ExtResource("4")
 title_text = "Idle Clicker Battler"
-description = "An action-packed idle clicker where battles are won one click at a time. Currently in development, built in Godot and playable in the browser or on Windows."
+description = "Win battles one click at a time."
 link_text = "Play on itch.io"
 external_url = "https://amez73.itch.io/idle-clicker-battler"
 
