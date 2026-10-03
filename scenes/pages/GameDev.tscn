@@ -95,7 +95,7 @@ external_url = "https://amez73.itch.io/fencing-game"
 layout_mode = 2
 image_texture = ExtResource("4")
 title_text = "Idle Clicker Battler"
-description = "Win battles one click at a time."
+description = "Like cookie clicker but you make an army instead of cookies and charge into battle"
 link_text = "Play on itch.io"
 external_url = "https://amez73.itch.io/idle-clicker-battler"
 
